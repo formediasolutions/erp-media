@@ -1,0 +1,29 @@
+.m-header .m-header__bottom {
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    background: #3d3b56;
+    height: 50px !important;
+}
+
+.m-header--fixed.m-header--minimize-off .m-header {
+    -webkit-transition: all .3s ease .3s;
+    -moz-transition: all .3s ease .3s;
+    -ms-transition: all .3s ease .3s;
+    -o-transition: all .3s ease .3s;
+    transition: all .3s ease .3s;
+    height: 120px !important;
+}
+
+.m-header--fixed.m-header--minimize-off .m-header .m-header__top {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    height: 70px !important;
+}
+
+.m-subheader {
+    padding: 0px 0 0 0 !important;
+}
