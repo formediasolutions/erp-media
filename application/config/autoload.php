@@ -118,7 +118,7 @@ $autoload['helper'] = array('url', 'file', 'html','form', 'string', 'cookie', 'g
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array('Erp_config');
+$autoload['config'] = array('erp_config');
 
 /*
 | -------------------------------------------------------------------
