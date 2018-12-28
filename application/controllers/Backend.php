@@ -15,7 +15,7 @@ class Backend extends CI_Controller {
     function __construct()
     {       
         parent::__construct();
-        
+
         $ip_lost_permission = config_item('ip_lost_permission');
         if( is_coming_soon() ){
             if( !in_array($this->input->ip_address(), $ip_lost_permission) ){
@@ -131,6 +131,11 @@ class Backend extends CI_Controller {
 	public function admmenu( $id=0  )
 	{
         auth_redirect();
+
+        //include library
+        $this->load->library('PHPGridLite');
+        //require_once('../libraries/phpGrid_Lite/conf.php'); 
+
         $member_data            = '';
         $current_member         = erp_get_current_member();
         $is_admin               = as_administrator($current_member);
@@ -176,6 +181,8 @@ class Backend extends CI_Controller {
             'TableAjax.init();',
         ));
         
+        $data['phpgrid'] = new C_DataGrid("SELECT * FROM adm_menu", 4, "Orders");
+
         $data['title']          = TITLE . 'Master Menu';
         $data['member']         = $current_member;
         $data['member_other']   = $member_data;

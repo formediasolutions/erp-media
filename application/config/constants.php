@@ -182,6 +182,16 @@ if ( !defined('LOGGED_IN_COOKIE') )     define('LOGGED_IN_COOKIE', 'erp_logged_i
 */
 define('SWIFT_MAILSERVER',      realpath(dirname(__FILE__) . '/..') . DIRECTORY_SEPARATOR . '/libraries/swiftmailer/swift_required.php');
 
+/*
+|--------------------------------------------------------------------------
+| Php Grid Lite Engine
+|--------------------------------------------------------------------------
+|
+| Php Grid Lite Location
+|
+*/
+define('PHPGRID_LITESERVER',      realpath(dirname(__FILE__) . '/..') . DIRECTORY_SEPARATOR . '/libraries/phpGrid_Lite/conf.php');
+
 /**
  * Member type constants
  * @author	Iqbal
