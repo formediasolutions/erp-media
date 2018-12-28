@@ -132,6 +132,7 @@ define('IMG_PATH',          BASE_URL . 'assets/img/');
 define('JS_PATH',           BASE_URL . 'assets/js/');
 define('VENDORS_PATH',      BASE_URL . 'assets/vendors/');
 define('ASSETS_PATH',       BASE_URL . 'assets/');
+define('LIBRARY_PATH',      BASE_URL . 'application/libraries/');
 
 define('BOOTSTRAP_PATH',    BASE_URL . 'assets/bootstrap/');
 define('PLUGIN_PATH',       BASE_URL . 'assets/js/plugins/');

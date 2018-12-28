@@ -134,8 +134,8 @@ class Backend extends CI_Controller {
 
         //include library
         $this->load->library('PHPGridLite');
-        //require_once('../libraries/phpGrid_Lite/conf.php'); 
-
+        //require_once(LIBRARY_PATH .'phpGrid_Lite/conf.php'); 
+ 
         $member_data            = '';
         $current_member         = erp_get_current_member();
         $is_admin               = as_administrator($current_member);
@@ -152,9 +152,9 @@ class Backend extends CI_Controller {
             PLUGIN_PATH . 'node-waves/waves.css',
             PLUGIN_PATH . 'animate-css/animate.css',
             // DataTable Plugin
-            PLUGIN_PATH . 'jquery-datatable/dataTables.bootstrap.css',
+            //PLUGIN_PATH . 'jquery-datatable/dataTables.bootstrap.css',
             // Datetime Picker Plugin
-            PLUGIN_PATH . 'bootstrap-daterangepicker/daterangepicker.css',
+            //PLUGIN_PATH . 'bootstrap-daterangepicker/daterangepicker.css',
         ));
         
         $loadscripts            = erp_scripts(array(
@@ -162,13 +162,13 @@ class Backend extends CI_Controller {
             PLUGIN_PATH . 'node-waves/waves.js',
             //PLUGIN_PATH . 'jquery-slimscroll/jquery.slimscroll.js',
             // DataTable Plugin
-            PLUGIN_PATH . 'jquery-datatable/jquery.dataTables.min.js',
-            PLUGIN_PATH . 'jquery-datatable/dataTables.bootstrap.js',
-            PLUGIN_PATH . 'jquery-datatable/datatable.js',
+            //PLUGIN_PATH . 'jquery-datatable/jquery.dataTables.min.js',
+            //PLUGIN_PATH . 'jquery-datatable/dataTables.bootstrap.js',
+            //PLUGIN_PATH . 'jquery-datatable/datatable.js',
             // Datetime Picker Plugin
-            PLUGIN_PATH . 'momentjs/moment.js',
-            PLUGIN_PATH . 'bootstrap-daterangepicker/moment.min.js',
-            PLUGIN_PATH . 'bootstrap-daterangepicker/daterangepicker.js',
+            //PLUGIN_PATH . 'momentjs/moment.js',
+            //PLUGIN_PATH . 'bootstrap-daterangepicker/moment.min.js',
+            //PLUGIN_PATH . 'bootstrap-daterangepicker/daterangepicker.js',
             // Always placed at bottom
             //JS_PATH . 'admin.js',
             // Put script based on current page
@@ -181,7 +181,11 @@ class Backend extends CI_Controller {
             'TableAjax.init();',
         ));
         
-        $data['phpgrid'] = new C_DataGrid("SELECT * FROM adm_menu", 4, "Orders");
+        $datagrid = new C_DataGrid("SELECT * FROM adm_menu", 'id_adm_menu', "adm_menu");
+
+        echo '<pre>';
+        print_r($datagrid);
+        die();
 
         $data['title']          = TITLE . 'Master Menu';
         $data['member']         = $current_member;
@@ -195,6 +199,7 @@ class Backend extends CI_Controller {
         $data['scripts']        = $loadscripts;
         $data['scripts_add']    = $scripts_add;
         $data['scripts_init']   = $scripts_init;
+        $data['phpgrid']        = $datagrid->display();
         $data['main_content']   = 'adm/admmenu';
         
         $this->load->view(VIEW_BACK . 'template', $data);

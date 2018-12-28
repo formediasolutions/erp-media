@@ -110,8 +110,10 @@ define('PHPGRID_DB_CHARSET','');
 if (stripos($_SERVER['SCRIPT_NAME'], 'apps/phpgrid-custom-crm')) {
 	define('SERVER_ROOT', '/phpGridx/apps/phpgrid-custom-crm/phpGrid_Lite');	
 } else {
-	define('SERVER_ROOT', str_replace(str_replace('\\', '/', realpath($_SERVER['DOCUMENT_ROOT'])),'', str_replace('\\', '/',dirname(__FILE__))));
+	//define('SERVER_ROOT', str_replace(str_replace('\\', '/', realpath($_SERVER['DOCUMENT_ROOT'])),'', str_replace('\\', '/',dirname(__FILE__))));
+	define('SERVER_ROOT', LIBRARY_PATH . 'phpGrid_Lite');
 }
+
 define('THEME', 'start');
 define('FRAMEWORK', '');	// indicating framework integrating - not used yet
 define('DEBUG', false); // *** MUST SET TO FALSE WHEN DEPLOYED IN PRODUCTION ***

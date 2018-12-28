@@ -118,7 +118,7 @@
 				</div>
 			</div>
 			<div class="m-portlet__body">
-				<?php $phpgrid->display(); ?>
+				<?php $phpgrid; ?>
 			</div>
 		</div>
         </div>
