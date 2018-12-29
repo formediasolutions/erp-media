@@ -19,7 +19,7 @@ class PHPGridLite
         $this->CI       =& get_instance();
         //$this->active	= config_item('email_active');
 		
-        require_once PHPGRID_LITESERVER;
+        require_once PHPGRIDLITE_LITESERVER;
 	}
 }
 ?>

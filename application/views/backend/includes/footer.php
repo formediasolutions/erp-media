@@ -76,7 +76,7 @@
     		<!--begin::Page Snippets -->
     		<script src="<?php echo ASSETS_PATH; ?>app/js/dashboard.js" type="text/javascript"></script>
     		<!--end::Page Snippets -->
-            
+			
             <!--begin::Page Snippets -->
     		<script src="<?php echo ASSETS_PATH; ?>js/app.js" type="text/javascript"></script>
     		<!--end::Page Snippets -->

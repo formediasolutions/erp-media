@@ -191,7 +191,8 @@ define('SWIFT_MAILSERVER',      realpath(dirname(__FILE__) . '/..') . DIRECTORY_
 | Php Grid Lite Location
 |
 */
-define('PHPGRID_LITESERVER',      realpath(dirname(__FILE__) . '/..') . DIRECTORY_SEPARATOR . '/libraries/phpGrid_Lite/conf.php');
+define('PHPGRIDLITE_LITESERVER',  realpath(dirname(__FILE__) . '/..') . DIRECTORY_SEPARATOR . '/libraries/phpGrid_Lite/conf.php');
+define('PHPGRID_LITESERVER',      realpath(dirname(__FILE__) . '/..') . DIRECTORY_SEPARATOR . '/libraries/phpgrid/config.php');
 
 /**
  * Member type constants

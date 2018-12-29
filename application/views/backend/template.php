@@ -42,7 +42,10 @@
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
-        
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
+			
+		
         <!--begin::Base Styles -->  
         <!--begin::Page Vendors -->
 		<link href="<?php echo VENDORS_PATH; ?>custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
@@ -54,6 +57,15 @@
         <link href="<?php echo PLUGIN_PATH; ?>sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
         
         <?php echo $headstyles; ?>
+		<script src="../../lib/js/jquery.min.js" type="text/javascript"></script>
+		<script src="../../lib/js/jqgrid/js/i18n/grid.locale-en.js" type="text/javascript"></script>
+		<script src="../../lib/js/jqgrid/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+		<script src="../../lib/js/themes/jquery-ui.custom.min.js" type="text/javascript"></script>
+		
+		<!-- 
+			<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+		-->
         <!-- Custom CSS -->
 		<link href="<?php echo ASSETS_PATH; ?>css/custom.css" rel="stylesheet" type="text/css" />
 	</head>
