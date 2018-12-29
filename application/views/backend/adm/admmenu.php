@@ -118,12 +118,7 @@
 				</div>
 			</div>
 			<div class="m-portlet__body">
-				<?php 
-				
-				echo '<pre>';
-				print_r($phpgrid->display());
-				die();
-				$phpgrid->display(); ?>
+				<?php echo $output; ?>
 			</div>
 		</div>
         </div>

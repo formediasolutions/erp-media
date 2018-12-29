@@ -55,7 +55,7 @@
 			<!-- end::Footer -->
             
             <!-- Jquery Core Js -->
-            <script src="<?php echo PLUGIN_PATH; ?>jquery/jquery.min.js"></script>
+            <!-- <script src="<?php echo PLUGIN_PATH; ?>jquery/jquery.min.js"></script> -->
             
             <!--begin::Base Scripts -->
     		<script src="<?php echo VENDORS_PATH; ?>base/vendors.bundle.js" type="text/javascript"></script>
@@ -67,7 +67,7 @@
     		<!--end::Page Vendors -->
             
             <!-- Bootstrap Core Js -->
-            <script src="<?php echo PLUGIN_PATH; ?>bootstrap/js/bootstrap.js"></script>
+            <!-- <script src="<?php echo PLUGIN_PATH; ?>bootstrap/js/bootstrap.js"></script> -->
             
             <!-- Additional/Plugins JS -->
             <script src="<?php echo PLUGIN_PATH; ?>sweetalert/sweetalert.min.js"></script>
@@ -76,7 +76,7 @@
     		<!--begin::Page Snippets -->
     		<script src="<?php echo ASSETS_PATH; ?>app/js/dashboard.js" type="text/javascript"></script>
     		<!--end::Page Snippets -->
-			
+
             <!--begin::Page Snippets -->
-    		<script src="<?php echo ASSETS_PATH; ?>js/app.js" type="text/javascript"></script>
+    		<!-- <script src="<?php echo ASSETS_PATH; ?>js/app.js" type="text/javascript"></script> -->
     		<!--end::Page Snippets -->

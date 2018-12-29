@@ -147,4 +147,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Model_Member','Model_Option');
+$autoload['model'] = array('Model_Member','Model_Option', 'Grocery_crud_model');

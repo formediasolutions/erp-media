@@ -57,12 +57,14 @@
         <link href="<?php echo PLUGIN_PATH; ?>sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
         
         <?php echo $headstyles; ?>
+		
+		<!-- 
 		<script src="../../lib/js/jquery.min.js" type="text/javascript"></script>
 		<script src="../../lib/js/jqgrid/js/i18n/grid.locale-en.js" type="text/javascript"></script>
 		<script src="../../lib/js/jqgrid/js/jquery.jqGrid.min.js" type="text/javascript"></script>
 		<script src="../../lib/js/themes/jquery-ui.custom.min.js" type="text/javascript"></script>
 		
-		<!-- 
+		
 			<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 		-->

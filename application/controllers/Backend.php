@@ -133,10 +133,15 @@ class Backend extends CI_Controller {
         auth_redirect();
 
         //include library
-        $this->load->library('PHPGrid');
+        $this->load->database();
+        $this->load->library('grocery_CRUD');
         //require_once(LIBRARY_PATH .'phpGrid_Lite/conf.php');
-        include_once(PHPGRID_LIBPATH. "/inc/jqgrid_dist.php"); 
- 
+        //include_once(PHPGRID_LIBPATH. "/inc/jqgrid_dist.php");
+        
+        $this->config->load('grocery_crud');
+		$this->config->set_item('grocery_crud_dialog_forms',true);
+		$this->config->set_item('grocery_crud_default_per_page',10);
+
         $member_data            = '';
         $current_member         = erp_get_current_member();
         $is_admin               = as_administrator($current_member);
@@ -149,6 +154,7 @@ class Backend extends CI_Controller {
         $id_member              = ( $id > 0 ? $member_data->id : $current_member->id );
         
         // Database config file to be passed in phpgrid constructor
+        /*
         $db_conf = array(
             "type" 		=> PHPGRID_DBTYPE,
             "server" 	=> PHPGRID_DBHOST,
@@ -167,8 +173,21 @@ class Backend extends CI_Controller {
 
         $datagrid->table    = "adm_menu";
         $out = $datagrid->render("listmenu");
-        
-        $headstyles             = erp_headstyles(array(
+        */
+        $crud = new grocery_CRUD();
+        $crud->set_theme('datatables');
+        $crud->set_table('adm_menu');
+        $crud->set_subject('Menu');
+        /*
+        $crud->required_fields('name');
+        $crud->columns('name','sequence_no','page_name','menu_level','id_adm_menu');
+        $crud->set_crud_url_path(site_url(strtolower(__CLASS__."/".__FUNCTION__)), null);
+        */
+        $output     = $crud->render();
+        $cssFiles   = $output->css_files;
+        $jsFiles    = $output->js_files;
+
+        $arrCSS = array(
             // Default CSS Plugin
             PLUGIN_PATH . 'node-waves/waves.css',
             PLUGIN_PATH . 'animate-css/animate.css',
@@ -179,9 +198,13 @@ class Backend extends CI_Controller {
             //'../../lib/bootstrap/css/bootstrap.min.css',
             //'../../lib/js/themes/base/jquery-ui.custom.css',
             //'../../lib/js/themes/base/js/jqgrid/css/ui.jqgrid.css',
-        ));
+        );
+
+        $generateCssFiles = array_merge($arrCSS, $cssFiles);
+        $headstyles             = erp_headstyles($generateCssFiles);
         
-        $loadscripts            = erp_scripts(array(
+
+        $arrJS = array(
             // Default JS Plugin
             PLUGIN_PATH . 'node-waves/waves.js',
             //PLUGIN_PATH . 'jquery-slimscroll/jquery.slimscroll.js',
@@ -204,7 +227,9 @@ class Backend extends CI_Controller {
             //'../../lib/bootstrap/js/jquery.js',
             //'../../lib/bootstrap/js/bootstrap.min.js',
             //JS_PATH . 'pages/table/table-ajax.js',
-        ));
+        );
+        $generateJsFiles = array_merge($arrJS, $jsFiles);
+        $loadscripts            = erp_scripts($generateJsFiles);
         
         $scripts_add            = '';
         $scripts_init           = erp_scripts_init(array(
@@ -226,8 +251,8 @@ class Backend extends CI_Controller {
         $data['scripts']        = $loadscripts;
         $data['scripts_add']    = $scripts_add;
         $data['scripts_init']   = $scripts_init;
-        $data['phpgrid']        = $out;
-        $data['main_content']   = 'adm/test';
+        $data['phpgrid']        = $output;
+        $data['main_content']   = 'adm/admmenu';
         
         $this->load->view(VIEW_BACK . 'template', $data);
     }
