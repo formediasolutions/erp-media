@@ -178,14 +178,10 @@ class Backend extends CI_Controller {
         $scripts_add            = '';
         $scripts_init           = erp_scripts_init(array(
             //'App.init();',
-            'TableAjax.init();',
+            //'TableAjax.init();',
         ));
         
         $datagrid = new C_DataGrid("SELECT * FROM adm_menu", 'id_adm_menu', "adm_menu");
-
-        echo '<pre>';
-        print_r($datagrid);
-        die();
 
         $data['title']          = TITLE . 'Master Menu';
         $data['member']         = $current_member;
@@ -199,8 +195,8 @@ class Backend extends CI_Controller {
         $data['scripts']        = $loadscripts;
         $data['scripts_add']    = $scripts_add;
         $data['scripts_init']   = $scripts_init;
-        $data['phpgrid']        = $datagrid->display();
-        $data['main_content']   = 'adm/admmenu';
+        $data['phpgrid']        = $datagrid;
+        $data['main_content']   = 'adm/test';
         
         $this->load->view(VIEW_BACK . 'template', $data);
     }
